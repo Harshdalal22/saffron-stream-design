@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Instagram, Facebook, Youtube, MapPin, Phone, Mail } from "lucide-react";
+import { Instagram, Facebook, Youtube, MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const footerLinks = {
@@ -153,6 +153,34 @@ export function Footer() {
               ))}
             </ul>
           </div>
+        </div>
+      </div>
+
+      {/* WhatsApp CTA Banner */}
+      <div className="bg-gradient-to-r from-green-600 to-green-500 py-6">
+        <div className="container mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <div className="flex items-center gap-3 text-white">
+              <Phone size={20} />
+              <span className="font-bold text-lg">9509302669</span>
+            </div>
+            <motion.a
+              href="https://wa.me/919509302669?text=Hi,%20I%20would%20like%20to%20order%20sweets"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-2 bg-white text-green-600 px-8 py-3 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-shadow"
+            >
+              <MessageCircle size={24} />
+              Order Now on WhatsApp
+            </motion.a>
+          </motion.div>
         </div>
       </div>
 
