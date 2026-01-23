@@ -20,18 +20,13 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 pt-24 pb-12">
         <div className="max-w-3xl">
-          {/* Tagline */}
+          {/* Decorative Line */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, width: 0 }}
+            animate={{ opacity: 1, width: 48 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex items-center gap-3 mb-6"
-          >
-            <div className="h-px w-12 bg-gold" />
-            <span className="text-gold font-body text-sm tracking-[0.3em] uppercase">
-              Since 1965
-            </span>
-          </motion.div>
+            className="h-px bg-gold mb-6"
+          />
 
           {/* Heading */}
           <motion.h1
