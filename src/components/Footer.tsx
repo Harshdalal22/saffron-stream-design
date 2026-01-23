@@ -70,8 +70,8 @@ export function Footer() {
           <div className="lg:col-span-2">
             <img src={logo} alt="Siyaram's Sweets" className="h-14 w-auto mb-6" />
             <p className="font-body text-cream/60 text-sm leading-relaxed mb-6 max-w-xs">
-              Bringing the authentic taste of Rajasthani mithai to your celebrations
-              since 1965. Crafted with love, served with tradition.
+              Bringing the authentic taste of Rajasthani mithai to your celebrations.
+              Crafted with love, served with tradition.
             </p>
             
             {/* Contact Info */}

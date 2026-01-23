@@ -51,14 +51,55 @@ export function Header() {
         }`}
       >
         <div className="container mx-auto flex items-center justify-between">
-          {/* Logo */}
+          {/* 3D Animated Logo */}
           <motion.a
             href="/"
-            className="flex items-center"
-            whileHover={{ scale: 1.02 }}
+            className="flex items-center perspective-1000"
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
           >
-            <img src={logo} alt="Siyaram's Sweets" className="h-10 md:h-12 w-auto" />
+            <motion.div
+              className="relative"
+              animate={{
+                rotateY: [0, 10, -10, 5, -5, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              style={{
+                transformStyle: "preserve-3d",
+              }}
+              whileHover={{
+                rotateY: 15,
+                rotateX: -5,
+                scale: 1.1,
+                transition: { duration: 0.3 },
+              }}
+            >
+              <motion.img
+                src={logo}
+                alt="Siyaram's Sweets"
+                className="h-10 md:h-12 w-auto drop-shadow-lg"
+                style={{
+                  filter: "drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2))",
+                }}
+              />
+              {/* 3D Glow Effect */}
+              <motion.div
+                className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-400/20 to-yellow-400/20 blur-xl -z-10"
+                animate={{
+                  opacity: [0.3, 0.6, 0.3],
+                  scale: [1, 1.1, 1],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+            </motion.div>
           </motion.a>
 
           {/* Desktop Navigation */}
