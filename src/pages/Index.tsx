@@ -14,8 +14,8 @@ const Index = () => {
       <Header />
       <Hero />
       <RetailPriceSection />
-      <PriceListSection />
       <ProductGrid />
+      <PriceListSection />
       <HeritageSection />
       <QualitySection />
       <GiftingSection />
