@@ -23,39 +23,39 @@ const categories = ["All", "Laddus", "Pedas", "Barfis", "Pak", "Namkeen", "Gift 
 
 const products = [
   // Laddus
-  { id: 1, name: "लड्डू (Laddu)", description: "Traditional desi ghee laddu, handcrafted with pure ingredients.", price: 380, image: heroLaddu, badge: "bestseller" as const, category: "Laddus" },
-  { id: 2, name: "बादाम लड्डू (Badam Laddu)", description: "Rich almond laddu made with premium quality almonds and desi ghee.", price: 421, image: besanLaddu, category: "Laddus" },
-  { id: 3, name: "बादाम पिस्ता लड्डू (Badam Pista Laddu)", description: "Luxurious combination of almonds and pistachios in pure ghee.", price: 460, image: motichoorLaddu, badge: "fresh" as const, category: "Laddus" },
-  { id: 4, name: "गोंद लड्डू (Gond Laddu)", description: "Nutritious edible gum laddu, perfect for winters and health.", price: 480, image: gondLaddu, category: "Laddus" },
-  { id: 5, name: "चूरमा लड्डू (Churma Laddu)", description: "Traditional Rajasthani churma laddu with coarse wheat and jaggery.", price: 450, image: churma, category: "Laddus" },
-  { id: 6, name: "पचधारी लड्डू (Pachdhari Laddu)", description: "Five-ingredient special laddu with rich aromatic spices.", price: 480, image: heroLaddu, category: "Laddus" },
-  { id: 7, name: "बेसन लड्डू (Besan Laddu)", description: "Aromatic gram flour roasted in desi ghee with cardamom.", price: 480, image: besanLaddu, badge: "fresh" as const, category: "Laddus" },
-  { id: 8, name: "मोती चूर लड्डू (Moti Chur Laddu)", description: "Delicate boondi pearls bound with sugar syrup and cardamom.", price: 480, image: motichoorLaddu, category: "Laddus" },
+  { id: 1, name: "लड्डू (Laddu)", description: "Traditional desi ghee laddu, handcrafted with pure ingredients.", price: 190, image: heroLaddu, badge: "bestseller" as const, category: "Laddus" },
+  { id: 2, name: "बादाम लड्डू (Badam Laddu)", description: "Rich almond laddu made with premium quality almonds and desi ghee.", price: 220, image: besanLaddu, category: "Laddus" },
+  { id: 3, name: "बादाम पिस्ता लड्डू (Badam Pista Laddu)", description: "Luxurious combination of almonds and pistachios in pure ghee.", price: 230, image: motichoorLaddu, badge: "fresh" as const, category: "Laddus" },
+  { id: 4, name: "गोंद लड्डू (Gond Laddu)", description: "Nutritious edible gum laddu, perfect for winters and health.", price: 240, image: gondLaddu, category: "Laddus" },
+  { id: 5, name: "चूरमा लड्डू (Churma Laddu)", description: "Traditional Rajasthani churma laddu with coarse wheat and jaggery.", price: 230, image: churma, category: "Laddus" },
+  { id: 6, name: "पचधारी लड्डू (Pachdhari Laddu)", description: "Five-ingredient special laddu with rich aromatic spices.", price: 240, image: heroLaddu, category: "Laddus" },
+  { id: 7, name: "बेसन लड्डू (Besan Laddu)", description: "Aromatic gram flour roasted in desi ghee with cardamom.", price: 240, image: besanLaddu, badge: "fresh" as const, category: "Laddus" },
+  { id: 8, name: "मोती चूर लड्डू (Moti Chur Laddu)", description: "Delicate boondi pearls bound with sugar syrup and cardamom.", price: 240, image: motichoorLaddu, category: "Laddus" },
 
   // Pedas
-  { id: 9, name: "पेड़ा (Peda)", description: "Classic mawa peda, slow-cooked to perfection.", price: 480, image: kesarPeda, category: "Pedas" },
-  { id: 10, name: "केसर पेड़ा (Kesar Peda)", description: "Infused with hand-picked saffron strands and slow-cooked mawa.", price: 580, image: kesarPeda, badge: "bestseller" as const, category: "Pedas" },
-  { id: 11, name: "चेतन पेड़ा (Chetan Peda)", description: "Premium peda with the finest quality mawa and exotic flavors.", price: 1400, image: kesarPeda, badge: "fresh" as const, category: "Pedas" },
+  { id: 9, name: "पेड़ा (Peda)", description: "Classic mawa peda, slow-cooked to perfection.", price: 240, image: kesarPeda, category: "Pedas" },
+  { id: 10, name: "केसर पेड़ा (Kesar Peda)", description: "Infused with hand-picked saffron strands and slow-cooked mawa.", price: 290, image: kesarPeda, badge: "bestseller" as const, category: "Pedas" },
+  { id: 11, name: "चेतन पेड़ा (Chetan Peda)", description: "Premium peda with the finest quality mawa and exotic flavors.", price: 700, image: kesarPeda, badge: "fresh" as const, category: "Pedas" },
 
   // Barfis
-  { id: 12, name: "काजू बर्फी (Kaju Barfi)", description: "Silver-coated cashew diamonds, crafted with precision.", price: 760, image: kajuKatli, badge: "bestseller" as const, category: "Barfis" },
-  { id: 13, name: "बादाम बर्फी (Badam Barfi)", description: "Rich almond barfi with silver leaf and pure ghee.", price: 1200, image: badamBarfi, category: "Barfis" },
-  { id: 14, name: "कलाकन्द (Kalakand)", description: "Soft milk cake with golden brown top and cardamom.", price: 480, image: kalakand, category: "Barfis" },
-  { id: 15, name: "दिलखुशाल (Dilkhushal)", description: "Heart-shaped delicacy made with khoya and dry fruits.", price: 460, image: kajuKatli, category: "Barfis" },
+  { id: 12, name: "काजू बर्फी (Kaju Barfi)", description: "Silver-coated cashew diamonds, crafted with precision.", price: 380, image: kajuKatli, badge: "bestseller" as const, category: "Barfis" },
+  { id: 13, name: "बादाम बर्फी (Badam Barfi)", description: "Rich almond barfi with silver leaf and pure ghee.", price: 600, image: badamBarfi, category: "Barfis" },
+  { id: 14, name: "कलाकन्द (Kalakand)", description: "Soft milk cake with golden brown top and cardamom.", price: 240, image: kalakand, category: "Barfis" },
+  { id: 15, name: "दिलखुशाल (Dilkhushal)", description: "Heart-shaped delicacy made with khoya and dry fruits.", price: 230, image: kajuKatli, category: "Barfis" },
 
   // Pak Items
-  { id: 16, name: "गोंद पाक (Gond Pak)", description: "Nutritious edible gum sweet, perfect for health.", price: 480, image: gondLaddu, category: "Pak" },
-  { id: 17, name: "खोपरा पाक (Khopra Pak)", description: "Coconut-based sweet with rich desi ghee flavor.", price: 421, image: kajuKatli, category: "Pak" },
-  { id: 18, name: "मोती पाक (Moti Pak)", description: "Pearl-like delicacy with fine texture and aroma.", price: 480, image: kajuKatli, category: "Pak" },
-  { id: 19, name: "गाजर पाक (Gajar Pak)", description: "Carrot-based sweet fudge with nuts and raisins.", price: 600, image: gajarPak, badge: "fresh" as const, category: "Pak" },
-  { id: 20, name: "चूरमा (Churma)", description: "Traditional coarse wheat sweet with ghee and jaggery.", price: 421, image: churma, category: "Pak" },
+  { id: 16, name: "गोंद पाक (Gond Pak)", description: "Nutritious edible gum sweet, perfect for health.", price: 240, image: gondLaddu, category: "Pak" },
+  { id: 17, name: "खोपरा पाक (Khopra Pak)", description: "Coconut-based sweet with rich desi ghee flavor.", price: 210, image: kajuKatli, category: "Pak" },
+  { id: 18, name: "मोती पाक (Moti Pak)", description: "Pearl-like delicacy with fine texture and aroma.", price: 240, image: kajuKatli, category: "Pak" },
+  { id: 19, name: "गाजर पाक (Gajar Pak)", description: "Carrot-based sweet fudge with nuts and raisins.", price: 300, image: gajarPak, badge: "fresh" as const, category: "Pak" },
+  { id: 20, name: "चूरमा (Churma)", description: "Traditional coarse wheat sweet with ghee and jaggery.", price: 240, image: churma, category: "Pak" },
 
   // Namkeen & Others
-  { id: 21, name: "मूंगदाल चक्की (Moongdal Chakki)", description: "Crispy moong dal rounds with mild spices.", price: 480, image: besanLaddu, category: "Namkeen" },
-  { id: 22, name: "बालूशाही (Balushahi)", description: "Golden flaky fried dessert soaked in sugar syrup.", price: 421, image: balushahi, category: "Namkeen" },
-  { id: 23, name: "कचौरी (Kachori)", description: "Crispy fried snack filled with spiced lentils.", price: 360, image: kachori, category: "Namkeen" },
-  { id: 24, name: "मठल्लू/पेठा (Mathallu/Petha)", description: "Soft translucent sweet made from ash gourd.", price: 280, image: kalakand, category: "Namkeen" },
-  { id: 25, name: "नमकीन/गट्टा/सुहाल (Namkeen/Gatta/Suhal)", description: "Savory mix of crispy snacks and namkeen.", price: 300, image: namkeen, category: "Namkeen" },
+  { id: 21, name: "मूंगदाल चक्की (Moongdal Chakki)", description: "Crispy moong dal rounds with mild spices.", price: 240, image: besanLaddu, category: "Namkeen" },
+  { id: 22, name: "बालूशाही (Balushahi)", description: "Golden flaky fried dessert soaked in sugar syrup.", price: 210, image: balushahi, category: "Namkeen" },
+  { id: 23, name: "कचौरी (Kachori)", description: "Crispy fried snack filled with spiced lentils.", price: 180, image: kachori, category: "Namkeen" },
+  { id: 24, name: "मठल्लू/पेठा (Mathallu/Petha)", description: "Soft translucent sweet made from ash gourd.", price: 140, image: kalakand, category: "Namkeen" },
+  { id: 25, name: "नमकीन/गट्टा/सुहाल (Namkeen/Gatta/Suhal)", description: "Savory mix of crispy snacks and namkeen.", price: 150, image: namkeen, category: "Namkeen" },
 
   // Gift Boxes
   { id: 26, name: "Royal Gift Box", description: "An exquisite assortment of our finest sweets.", price: 1850, image: giftBox, category: "Gift Boxes" },
@@ -101,16 +101,15 @@ export function ProductGrid() {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-5 py-2.5 rounded-full font-body text-sm font-medium transition-all duration-300 ${
-                selectedCategory === category
+              className={`px-5 py-2.5 rounded-full font-body text-sm font-medium transition-all duration-300 ${selectedCategory === category
                   ? "bg-primary text-primary-foreground shadow-soft"
                   : "bg-secondary text-foreground hover:bg-secondary/80"
-              }`}
+                }`}
             >
               {category}
             </button>
           ))}
-          
+
           <Button
             variant="outline"
             className="rounded-full border-border ml-4"

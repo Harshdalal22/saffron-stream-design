@@ -32,7 +32,7 @@ export function FloatingCart() {
         const encodedMessage = encodeURIComponent(message);
 
         // Replace with your WhatsApp business number (with country code, no + or spaces)
-        const phoneNumber = '919876543210'; // Replace with actual number
+        const phoneNumber = '919509302669';
 
         // Open WhatsApp
         window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
