@@ -6,6 +6,7 @@ import { HeritageSection } from "@/components/HeritageSection";
 import { QualitySection } from "@/components/QualitySection";
 import { GiftingSection } from "@/components/GiftingSection";
 import { Footer } from "@/components/Footer";
+import { FloatingCart } from "@/components/FloatingCart";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <QualitySection />
       <GiftingSection />
       <Footer />
+      <FloatingCart />
     </div>
   );
 };

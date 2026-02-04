@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Plus, Heart } from "lucide-react";
+import { Plus, Heart, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useCart } from "@/contexts/CartContext";
+import { useToast } from "@/hooks/use-toast";
 
 interface ProductCardProps {
   id: number;
@@ -14,6 +16,7 @@ interface ProductCardProps {
 }
 
 export function ProductCard({
+  id,
   name,
   description,
   price,
@@ -23,9 +26,27 @@ export function ProductCard({
 }: ProductCardProps) {
   const [selectedWeight, setSelectedWeight] = useState(weights[0]);
   const [isLiked, setIsLiked] = useState(false);
+  const { addToCart } = useCart();
+  const { toast } = useToast();
 
   const priceMultiplier = selectedWeight === "1kg" ? 2 : selectedWeight === "2kg" ? 3.8 : 1;
   const displayPrice = Math.round(price * priceMultiplier);
+
+  const handleAddToCart = () => {
+    addToCart({
+      id,
+      name,
+      price: displayPrice,
+      weight: selectedWeight,
+      image,
+    });
+
+    toast({
+      title: "Added to cart!",
+      description: `${name} (${selectedWeight}) added to your cart.`,
+      duration: 2000,
+    });
+  };
 
   return (
     <motion.div
@@ -42,7 +63,7 @@ export function ProductCard({
           alt={name}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        
+
         {/* Badge */}
         {badge && (
           <div className="absolute top-4 left-4">
@@ -63,15 +84,14 @@ export function ProductCard({
         >
           <Heart
             size={18}
-            className={`transition-colors ${
-              isLiked ? "fill-saffron text-saffron" : "text-foreground"
-            }`}
+            className={`transition-colors ${isLiked ? "fill-saffron text-saffron" : "text-foreground"
+              }`}
           />
         </motion.button>
 
         {/* Quick Add Button */}
         <div className="quick-add-btn">
-          <Button className="btn-luxury rounded-full px-6 py-2 text-sm shadow-luxury">
+          <Button onClick={handleAddToCart} className="btn-luxury rounded-full px-6 py-2 text-sm shadow-luxury">
             <Plus size={16} className="mr-1" />
             Quick Add
           </Button>
@@ -93,11 +113,10 @@ export function ProductCard({
             <button
               key={weight}
               onClick={() => setSelectedWeight(weight)}
-              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
-                selectedWeight === weight
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary text-foreground hover:bg-secondary/80"
-              }`}
+              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${selectedWeight === weight
+                ? "bg-primary text-primary-foreground"
+                : "bg-secondary text-foreground hover:bg-secondary/80"
+                }`}
             >
               {weight}
             </button>
@@ -111,10 +130,12 @@ export function ProductCard({
             <span className="text-sm text-muted-foreground ml-1">/ {selectedWeight}</span>
           </div>
           <Button
+            onClick={handleAddToCart}
             size="sm"
             variant="outline"
             className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all"
           >
+            <ShoppingCart size={16} className="mr-1" />
             Add to Cart
           </Button>
         </div>
