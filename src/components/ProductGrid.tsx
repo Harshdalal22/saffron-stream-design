@@ -39,22 +39,17 @@ const products = [
 
   // Barfis
   { id: 12, name: "काजू बर्फी (Kaju Barfi)", description: "Silver-coated cashew diamonds, crafted with precision.", price: 380, image: kajuKatli, badge: "bestseller" as const, category: "Barfis" },
-  { id: 13, name: "बादाम बर्फी (Badam Barfi)", description: "Rich almond barfi with silver leaf and pure ghee.", price: 600, image: badamBarfi, category: "Barfis" },
   { id: 14, name: "कलाकन्द (Kalakand)", description: "Soft milk cake with golden brown top and cardamom.", price: 240, image: kalakand, category: "Barfis" },
   { id: 15, name: "दिलखुशाल (Dilkhushal)", description: "Heart-shaped delicacy made with khoya and dry fruits.", price: 230, image: kajuKatli, category: "Barfis" },
 
   // Pak Items
   { id: 16, name: "गोंद पाक (Gond Pak)", description: "Nutritious edible gum sweet, perfect for health.", price: 240, image: gondLaddu, category: "Pak" },
-  { id: 17, name: "खोपरा पाक (Khopra Pak)", description: "Coconut-based sweet with rich desi ghee flavor.", price: 210, image: kajuKatli, category: "Pak" },
-  { id: 18, name: "मोती पाक (Moti Pak)", description: "Pearl-like delicacy with fine texture and aroma.", price: 240, image: kajuKatli, category: "Pak" },
   { id: 19, name: "गाजर पाक (Gajar Pak)", description: "Carrot-based sweet fudge with nuts and raisins.", price: 300, image: gajarPak, badge: "fresh" as const, category: "Pak" },
   { id: 20, name: "चूरमा (Churma)", description: "Traditional coarse wheat sweet with ghee and jaggery.", price: 240, image: churma, category: "Pak" },
 
   // Namkeen & Others
   { id: 21, name: "मूंगदाल चक्की (Moongdal Chakki)", description: "Crispy moong dal rounds with mild spices.", price: 240, image: besanLaddu, category: "Namkeen" },
   { id: 22, name: "बालूशाही (Balushahi)", description: "Golden flaky fried dessert soaked in sugar syrup.", price: 210, image: balushahi, category: "Namkeen" },
-  { id: 23, name: "कचौरी (Kachori)", description: "Crispy fried snack filled with spiced lentils.", price: 180, image: kachori, category: "Namkeen" },
-  { id: 24, name: "मठल्लू/पेठा (Mathallu/Petha)", description: "Soft translucent sweet made from ash gourd.", price: 140, image: kalakand, category: "Namkeen" },
   { id: 25, name: "नमकीन/गट्टा/सुहाल (Namkeen/Gatta/Suhal)", description: "Savory mix of crispy snacks and namkeen.", price: 150, image: namkeen, category: "Namkeen" },
 
   // Gift Boxes
@@ -102,8 +97,8 @@ export function ProductGrid() {
               key={category}
               onClick={() => setSelectedCategory(category)}
               className={`px-5 py-2.5 rounded-full font-body text-sm font-medium transition-all duration-300 ${selectedCategory === category
-                  ? "bg-primary text-primary-foreground shadow-soft"
-                  : "bg-secondary text-foreground hover:bg-secondary/80"
+                ? "bg-primary text-primary-foreground shadow-soft"
+                : "bg-secondary text-foreground hover:bg-secondary/80"
                 }`}
             >
               {category}
