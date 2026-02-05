@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Plus, Heart, ShoppingCart } from "lucide-react";
+import { Plus, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/contexts/CartContext";
 import { useToast } from "@/hooks/use-toast";
@@ -25,7 +25,6 @@ export function ProductCard({
   weights = ["500g", "1kg", "2kg"],
 }: ProductCardProps) {
   const [selectedWeight, setSelectedWeight] = useState(weights[0]);
-  const [isLiked, setIsLiked] = useState(false);
   const { addToCart } = useCart();
   const { toast } = useToast();
 
@@ -53,69 +52,63 @@ export function ProductCard({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="product-card group"
+      transition={{ duration: 0.4 }}
+      className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100"
     >
-      {/* Image Container */}
-      <div className="product-card-image aspect-square relative overflow-hidden">
-        <motion.img
+      {/* Image Container - Compact */}
+      <div className="relative w-full h-40 sm:h-44 overflow-hidden bg-gray-50">
+        <img
           src={image}
           alt={name}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-full object-cover"
         />
 
-        {/* Badge */}
+        {/* Badge - Smaller */}
         {badge && (
-          <div className="absolute top-4 left-4">
+          <div className="absolute top-2 left-2">
             {badge === "bestseller" ? (
-              <span className="badge-bestseller">Bestseller</span>
+              <span className="bg-orange-600 text-white text-xs px-2 py-0.5 rounded-md font-medium">
+                Bestseller
+              </span>
             ) : (
-              <span className="badge-fresh">Freshly Made</span>
+              <span className="bg-green-600 text-white text-xs px-2 py-0.5 rounded-md font-medium">
+                Fresh
+              </span>
             )}
           </div>
         )}
 
-        {/* Like Button */}
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => setIsLiked(!isLiked)}
-          className="absolute top-4 right-4 w-10 h-10 rounded-full bg-card/90 backdrop-blur-sm flex items-center justify-center shadow-soft transition-colors"
+        {/* Quick Add Button - Compact */}
+        <button
+          onClick={handleAddToCart}
+          className="absolute bottom-2 right-2 bg-white text-orange-600 rounded-lg px-3 py-1.5 text-sm font-semibold shadow-md hover:bg-orange-600 hover:text-white transition-all duration-200 flex items-center gap-1"
         >
-          <Heart
-            size={18}
-            className={`transition-colors ${isLiked ? "fill-saffron text-saffron" : "text-foreground"
-              }`}
-          />
-        </motion.button>
-
-        {/* Quick Add Button */}
-        <div className="quick-add-btn">
-          <Button onClick={handleAddToCart} className="btn-luxury rounded-full px-6 py-2 text-sm shadow-luxury">
-            <Plus size={16} className="mr-1" />
-            Quick Add
-          </Button>
-        </div>
+          <Plus size={14} />
+          ADD
+        </button>
       </div>
 
-      {/* Content */}
-      <div className="p-5">
-        <h3 className="font-display text-lg text-foreground mb-1 group-hover:text-primary transition-colors">
+      {/* Content - Compact */}
+      <div className="p-3 sm:p-4">
+        {/* Name */}
+        <h3 className="font-semibold text-sm sm:text-base text-gray-800 mb-1 line-clamp-1">
           {name}
         </h3>
-        <p className="font-body text-sm text-muted-foreground mb-4 line-clamp-2">
+
+        {/* Description - Hidden on mobile */}
+        <p className="text-xs text-gray-500 mb-2 line-clamp-1 hidden sm:block">
           {description}
         </p>
 
-        {/* Weight Selector */}
-        <div className="flex gap-2 mb-4">
+        {/* Weight Selector - Compact */}
+        <div className="flex gap-1.5 mb-3">
           {weights.map((weight) => (
             <button
               key={weight}
               onClick={() => setSelectedWeight(weight)}
-              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${selectedWeight === weight
-                ? "bg-primary text-primary-foreground"
-                : "bg-secondary text-foreground hover:bg-secondary/80"
+              className={`px-2.5 py-1 rounded-md text-xs font-medium transition-all ${selectedWeight === weight
+                  ? "bg-orange-600 text-white"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
             >
               {weight}
@@ -123,20 +116,19 @@ export function ProductCard({
           ))}
         </div>
 
-        {/* Price */}
+        {/* Price and Add Button - Compact */}
         <div className="flex items-center justify-between">
           <div>
-            <span className="font-display text-xl text-foreground">₹{displayPrice}</span>
-            <span className="text-sm text-muted-foreground ml-1">/ {selectedWeight}</span>
+            <span className="font-bold text-base sm:text-lg text-gray-900">₹{displayPrice}</span>
+            <span className="text-xs text-gray-500 ml-1">/{selectedWeight}</span>
           </div>
           <Button
             onClick={handleAddToCart}
             size="sm"
-            variant="outline"
-            className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all"
+            className="bg-orange-600 hover:bg-orange-700 text-white rounded-lg px-3 py-1.5 text-xs sm:text-sm h-auto"
           >
-            <ShoppingCart size={16} className="mr-1" />
-            Add to Cart
+            <ShoppingCart size={14} className="mr-1" />
+            Add
           </Button>
         </div>
       </div>

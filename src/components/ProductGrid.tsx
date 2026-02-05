@@ -116,7 +116,7 @@ export function ProductGrid() {
         </motion.div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 px-2 sm:px-0">
           {filteredProducts.map((product, index) => (
             <motion.div
               key={product.id}
