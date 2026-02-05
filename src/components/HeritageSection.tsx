@@ -50,7 +50,7 @@ export function HeritageSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-body text-cream/80 text-lg leading-relaxed mb-6"
           >
-            In 1965, in the heart of Chirawa, a small town in Rajasthan, our
+            In the heart of Chirawa, a small town in Rajasthan, our
             founder began crafting sweets with a simple philosophy — use the
             purest ingredients and let tradition guide every creation.
           </motion.p>
